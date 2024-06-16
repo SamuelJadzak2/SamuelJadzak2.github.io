@@ -18,7 +18,7 @@ const Page: React.FC = () => {
 
             <div className="flex flex-col justify-center mr-20 ml-20">
             <p className="mb-8">
-            I am a driven and passionate software developer with a commitment to continuous learning and a love for technology. I recently graduated from Oregon State University with a Bachelor's degree in Computer Science, where I built a robust foundation in developing cloud applications, implementing data structures and algorithms, and analyzing their time and space complexity.
+            I am a driven and passionate software developer with a commitment to continuous learning and a love for technology. I recently graduated from Oregon State University with a Bachelor&apos; degree in Computer Science, where I built a robust foundation in developing cloud applications, implementing data structures and algorithms, and analyzing their time and space complexity.
             </p>
             <p className="mb-8">
             Through internships and personal projects, I have honed my skills in diverse areas, including autonomous navigation systems, operating system development, embedded systems programming, and full-stack web development using modern frameworks such as React.js. I am proficient in several programming languages, including Python, Java, JavaScript, C/C++, and SQL, which equips me to tackle a wide range of technical challenges.

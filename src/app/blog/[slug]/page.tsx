@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { markdownToHtml } from '~/lib/markdown';
+// import { markdownToHtml } from '~/lib/markdown';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import DirectoryTree from '~/components/ui/fake-dir';
@@ -12,7 +12,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     'utf-8'
   );
   console.log(markdownContent)
-  const htmlContent = markdownToHtml(markdownContent);
 
   return (
     <>
@@ -22,7 +21,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     <div className="bg-neutral-950 min-h-screen flex justify-center items-center ">
       
       <div className="bg-neutral-950 p-8 max-w-3xl mx-auto rounded shadow-lg text-white font-mono">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={markdownContent} />
+      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdownContent}</ReactMarkdown>
       </div>
     </div>
     </>

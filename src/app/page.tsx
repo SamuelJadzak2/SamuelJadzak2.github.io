@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Meteors } from "~/components/ui/meteors";
 
 import { CreatePost } from "~/app/_components/create-post";
 import { api } from "~/trpc/server";

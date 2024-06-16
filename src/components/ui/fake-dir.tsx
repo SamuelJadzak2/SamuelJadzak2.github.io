@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/directory.css';
 
-
 interface Directory {
     name: string;
     children?: Directory[];
@@ -14,10 +13,13 @@ interface DirectoryProps {
 }
 
 const Directory: React.FC<DirectoryProps> = ({ directory }) => {
-    const isBigScreen = window.innerWidth > 768; // Adjust this value as needed
-    const [isOpen, setIsOpen] = useState(isBigScreen);
+    const [isBigScreen, setIsBigScreen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        setIsBigScreen(window.innerWidth > 768); // Adjust this value as needed
+        setIsOpen(window.innerWidth > 768);
+
         const handleResize = () => {
             setIsOpen(window.innerWidth > 1024);
         };
@@ -38,7 +40,7 @@ const Directory: React.FC<DirectoryProps> = ({ directory }) => {
     };
     return (
         <div>
-            <a href={directory.link || "#"} onClick={toggleOpen}>
+            <a href={directory.link ?? "#"} onClick={toggleOpen}>
                 {isOpen ? '└──' : '├──'} {directory.name}
             </a>
             {isOpen && directory.children && (
