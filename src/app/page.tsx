@@ -23,10 +23,7 @@ export default async function Home() {
 
   const words3 = [
     {
-      text: "A",
-    },
-    {
-      text: "creative",
+      text: "Creative",
     },
     {
       text: "software",
@@ -62,31 +59,30 @@ export default async function Home() {
   return (
 
     <main className="flex flex-col items-center overflow-hidden justify-center bg-neutral-950 console-text">
-      <div className=" mb-20 z-50 bg-neutral-950 crt">
-      <div className="absolute top-2 left-0">
-  <DirectoryTree />
-  </div>
+    <div className="mb-20 z-50 bg-neutral-950 crt w-full px-4 sm:px-6 lg:px-8">
+      <div className="absolute top-2 left-0 sm:left-4">
+        <DirectoryTree />
+      </div>
       <div className="container flex flex-col items-center justify-center z-50">
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight sm:text-[5rem] text-center">
           <TextGenerateEffect words={words} />
         </h1>
       </div>
-      <div className="max-w-2xl mx-auto mb-5 text-sm dark:text-slate-200 text-lg ">
-          <h2 className=" text-2xl pb-1 mb-4 border-b border-slate-800 bg-green-500 text-green-950">about me</h2>
-          <div style={{width: '600px', height:"50px", display: 'block', margin: '0 auto'}}> {/* Adjust this width as needed */}
-    <TypewriterEffect words={words3} />
-  </div>
+      <div className="w-full max-w-2xl mx-auto mb-5 text-sm dark:text-slate-200 text-lg">
+        <h2 className="text-2xl pb-1 mb-4 border-b border-slate-800 bg-green-500 text-green-950">about me</h2>
+        <div className="w-full sm:w-[600px] h-[50px] mx-auto">
+          <TypewriterEffect words={words3} />
+        </div>
+        <Link className="flex text-green-800 text-2xl pb-1 mb-4 items-center justify-center mt-5 fade-in color-pulse" href="/about">
+          learn more
+        </Link>
+      </div>
 
-          <Link className="flex text-green-800 text-2xl pb-1 mb-4 items-center justify-center mt-5 fade-in color-pulse" href="/about">
-                  learn more
-          </Link>
-          </div>
-        
-
-        
-      <p className="text-2xl pb-1 mb-4 border-b border-slate-800 bg-green-500 text-green-950">projects</p>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 justify-items-center">
-
+      <div className="w-full max-w-2xl mx-auto mb-5 text-sm dark:text-slate-200 text-lg">
+        <h2 className="text-2xl pb-1 mb-4 border-b border-slate-800 bg-green-500 text-green-950">projects</h2>
+      </div>
+      <div className="w-full max-w-[640px] mx-auto">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 justify-items-center">
         <Card className="w-[300px]">
       <Link
             className="flex rounded-xl bg-zinc-950 p-4"
@@ -143,13 +139,13 @@ export default async function Home() {
     </Card>
         </div>
         
-
+        </div>
 
       </div>
 
       <footer className="flex">
       <Link
-            className="flex bg-zinc-950 p-4 hover:bg-green-500"
+            className="flex bg-neutral-950 p-4 hover:bg-green-500"
             href="https://github.com/SamuelJadzak"
             target="_blank"
           >
@@ -159,7 +155,7 @@ export default async function Home() {
           </Link>
 
           <Link
-            className="flex bg-zinc-950 p-4 hover:bg-green-500"
+            className="flex bg-neutral-950 p-4 hover:bg-green-500"
             href="https://www.linkedin.com/in/samueljadzak/"
             target="_blank"
           >
@@ -170,51 +166,14 @@ export default async function Home() {
 </Link>
 
 
+
       </footer>
-      {/* <div>
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣼⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠏⣸⡸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⢰⡭⣧⣻⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢁⣿⢲⡽⣏⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⣀⡼⠇⣼⢣⣿⣞⣿⣘⠦⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢀⡠⡄⠒⠊⡁⠤⣐⢎⣳⣻⢾⣽⣿⣿⣿⣷⣶⣭⣕⡲⠤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠸⣥⣀⠈⠛⠶⢧⣕⣮⡝⣷⢿⣿⣿⣿⣿⣿⣿⣿⡿⣟⣛⣯⡼⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⠉⠒⠳⠤⣤⣭⡙⢿⣿⣯⣿⣿⢟⣿⣽⠖⠛⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⡘⣿⣿⣿⡿⣾⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣧⢹⣿⣿⣻⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡆⢿⣧⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣼⣇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣘⣼⠁⠀⠀⠀              ⣦⣾⡹⣆⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀           ⣦⣿⢳⣧⢸⡂⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⢀⣀⡤⢿⣫⣟⡿⣧⣟⡦⠤⣀⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠠⣶⣯⣯⣒⡿⢯⣷⣯⢿⡽⡿⢽⣟⣠⠟
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⣿⣦⢿⣿⠗⡿⠿⠁⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⣿⡎⡏⣿⠃⠁⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣷⣥⡟⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⡟⠃⠀⠀⠀⠀⠀⠀⠀
-
-
-
-      </div> */}
-
+      <div className="flex justify-center">
+        <p className="text-green-600 dark:text-green-500">Created with Next.js, TailwindCSS, and TypeScript</p>
+      </div>
     </main>
 
 
   );
 }
 
-async function CrudShowcase() {
-  const latestPost = await api.post.getLatest();
-
-  return (
-    <div className="w-full max-w-xs">
-      {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.name}</p>
-      ) : (
-        <p>You have no posts yet.</p>
-      )}
-
-      <CreatePost />
-    </div>
-  );
-}

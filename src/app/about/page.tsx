@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+
 import DirectoryTree from '~/components/ui/fake-dir';
 const Page: React.FC = () => {
     return (
@@ -8,7 +8,7 @@ const Page: React.FC = () => {
                 <DirectoryTree />
             </div>
             
-            <Image src="/headshot.jpg" alt="Your Name" className="mb-8 w-64 h-64 object-cover rounded-full mx-auto" width={256} height={256} />
+            <img src="/headshot.jpg" alt="Your Name" className="mb-8 w-64 h-64 object-cover rounded-full mx-auto" width={256} height={256} />
             <div className="flex justify-center">
             <h1 className="text-4xl">Sam Jadzak</h1>
             </div>

@@ -35,13 +35,16 @@ const Directory: React.FC<DirectoryProps> = ({ directory }) => {
     const toggleOpen = (event: React.MouseEvent) => {
         if (directory.children) {
             event.preventDefault();
+            setIsOpen(!isOpen);
         }
-        setIsOpen(!isOpen);
     };
+
+    const isLeafNode = !directory.children;
+
     return (
         <div>
             <a href={directory.link ?? "#"} onClick={toggleOpen}>
-                {isOpen ? '└──' : '├──'} {directory.name}
+                {isLeafNode ? '└──' : (isOpen ? '├──' : '└──')} {directory.name}
             </a>
             {isOpen && directory.children && (
                 <div className="nested">
@@ -56,7 +59,7 @@ const Directory: React.FC<DirectoryProps> = ({ directory }) => {
 
 const DirectoryTree: React.FC = () => {
     const directoryStructure: Directory = {
-        name: '.',
+        name: '/',
         children: [
             { name: 'Home', link: '/' },
             { name: 'About Me', link: '/about' },
